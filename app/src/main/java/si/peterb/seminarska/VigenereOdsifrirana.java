@@ -1,6 +1,8 @@
 package si.peterb.seminarska;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VigenereOdsifrirana extends Activity {
 
@@ -19,20 +22,39 @@ public class VigenereOdsifrirana extends Activity {
         Button button11 = findViewById(R.id.button11);
         button11.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                final String msg = (((EditText) findViewById(R.id.besedilo_vig_od)).getText()).toString();
-                final String kok = (((EditText) findViewById(R.id.kljuc_vig_od)).getText()).toString();
-                if ((msg.length() != 0) && (kok.length() != 0)) {
-                    Intent results = new Intent(VigenereOdsifrirana.this,Results.class);
-                    results.putExtra("str_zasif", vigenereOd(msg,kok));
-                    Log.e("n", msg+"."+ kok);
-                    startActivity(results);
-                }
-                else {
-                    TextView mTitle = findViewById(R.id.opozorilo);
-                    mTitle.setText("Prosim izpolnite vsa polja!");
-                }
+                cela();
             }
         });
+    }
+
+    public  void cela () {
+        final String msg = (((EditText) findViewById(R.id.besedilo_vig_od)).getText()).toString();
+        final String kok = (((EditText) findViewById(R.id.kljuc_vig_od)).getText()).toString();
+        if ((msg.length() != 0) && (kok.length() != 0)) {
+            try {
+                Intent results = new Intent(VigenereOdsifrirana.this, Results.class);
+                results.putExtra("str_zasif", vigenereOd(msg, kok));
+                Log.e("n", msg + "." + kok);
+                startActivity(results);
+            }
+            catch (Exception e){
+                Toast.makeText(getApplicationContext(), "nekaj je narobe :( (četrti del sporočila je: FF)",Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            AlertDialog alertDialog = new AlertDialog.Builder(VigenereOdsifrirana.this).create();
+            alertDialog.setTitle("Prazna polja");
+            alertDialog.setMessage("Prosimo, da izpolnite vsa polja");
+
+
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "EASTER EGGS: NEEBS GAMING 4LIFE", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            alertDialog.show();
+        }
     }
     public String vigenereOd(String besedilo, String kljuc) {
         String rez = "";

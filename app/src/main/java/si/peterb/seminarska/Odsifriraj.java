@@ -16,7 +16,6 @@ public class Odsifriraj extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_odsifriraj);
-        final int RESULT = 1;
         Button btn =  findViewById(R.id.button8);
 
         btn.setOnClickListener(new View.OnClickListener() {

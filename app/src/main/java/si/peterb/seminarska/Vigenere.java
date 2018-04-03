@@ -1,6 +1,8 @@
 package si.peterb.seminarska;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Vigenere extends Activity {
 
@@ -20,21 +23,39 @@ public class Vigenere extends Activity {
         Button button6 = findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
-                final String msg = (((EditText) findViewById(R.id.besedilo_vig)).getText()).toString();
-                final String kok = (((EditText) findViewById(R.id.kljuc_vig)).getText()).toString();
-                if ((msg.length() != 0) && (kok.length() != 0)) {
-                    Intent results = new Intent(Vigenere.this,Results.class);
-                    results.putExtra("str_zasif", vigenere(msg,kok));
-                    Log.e("n", msg+"."+ kok);
-                    startActivity(results);
-                }
-                else {
-                    TextView mTitle = findViewById(R.id.opozorilo);
-                    mTitle.setText("Prosim izpolnite vsa polja!");
-                }
+                cela();
             }
         });
 
+    }
+    public void cela () {
+        final String msg = (((EditText) findViewById(R.id.besedilo_vig)).getText()).toString();
+        final String kok = (((EditText) findViewById(R.id.kljuc_vig)).getText()).toString();
+        if ((msg.length() != 0) && (kok.length() != 0)) {
+           try {
+               Intent results = new Intent(Vigenere.this, Results.class);
+               results.putExtra("str_zasif", vigenere(msg, kok));
+               Log.e("n", msg + "." + kok);
+               startActivity(results);
+           }
+           catch (Exception e) {
+               Toast.makeText(getApplicationContext(), "nekaj je narobe :( (drugi del sporočila je: EP S)",Toast.LENGTH_SHORT).show();
+           }
+        }
+        else {
+            AlertDialog alertDialog = new AlertDialog.Builder(Vigenere.this).create();
+            alertDialog.setTitle("Prazna polja");
+            alertDialog.setMessage("Prosimo, da izpolnite vsa polja");
+
+
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "EASTER EGGS: DFTBA", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            alertDialog.show();
+        }
     }
 
     public String vigenere(String besedilo, String kljuc) {
