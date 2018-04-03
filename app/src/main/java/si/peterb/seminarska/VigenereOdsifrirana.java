@@ -48,7 +48,8 @@ public class VigenereOdsifrirana extends Activity {
                 if (trenuten < besedilo.length()) {
                     char c = besedilo.charAt(trenuten);
                     String forever = "abcčdefghijklmnoprsštuvzž1234567890";
-                    int ta_kljuc = forever.indexOf(c);
+                    char d = kljuc.charAt(j);
+                    int ta_kljuc = forever.indexOf(d);
                     abeceda = rotate(forever, ta_kljuc);
                     int charPosition = abeceda.indexOf(c);
 
