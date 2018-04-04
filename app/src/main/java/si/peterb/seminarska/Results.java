@@ -13,6 +13,7 @@ public class Results extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView a= findViewById(R.id.main_zasifrirano);
         Intent s = getIntent();

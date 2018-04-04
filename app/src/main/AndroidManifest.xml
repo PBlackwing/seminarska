@@ -18,8 +18,6 @@
         </activity>
         <activity android:name=".Cezarjeva" />
         <activity android:name=".Vigenere" />
-        <activity android:name=".Zasifriraj" />
-        <activity android:name=".Odsifriraj" />
         <activity android:name=".Results" />
         <activity android:name=".CezarjevaOdsifrirana" />
         <activity android:name=".VigenereOdsifrirana"></activity>
