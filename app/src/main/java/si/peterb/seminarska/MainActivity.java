@@ -16,51 +16,43 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RadioGroup radioGroup = findViewById(R.id.radGroup);
-        if(radioGroup.getCheckedRadioButtonId()==-1){
-            Toast.makeText(getApplicationContext(), "EASTER EGGS: NOT DEFINED", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            RadioButton radiobut = findViewById(R.id.Radiobutton);
-            if(radiobut.isChecked()) {
-                Button button1 = findViewById(R.id.button);
-
-                button1.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
+        
+        Button button1 = findViewById(R.id.button);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                RadioGroup radioGroup = findViewById(R.id.radGroup);
+                if(radioGroup.getCheckedRadioButtonId()==-1){
+                    Toast.makeText(getApplicationContext(), "EASTER EGGS: NOT DEFINED", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                     RadioButton radiobut = findViewById(R.id.Radiobutton);
+                     if(radiobut.isChecked()) {
                         Intent i = new Intent(MainActivity.this, Cezarjeva.class);
-                        startActivity(i);//Result =1
-                    }
-                });
-
-                Button button2 = findViewById(R.id.button2);
-
-                button2.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
+                        startActivity(i);
+                     }
+                     else {
+                        Intent i = new Intent(MainActivity.this, CezarjevaOdsifrirana.class;
+                        startActivity(i);
+                     }
+        });
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                RadioGroup radioGroup = findViewById(R.id.radGroup);
+                if(radioGroup.getCheckedRadioButtonId()==-1){
+                    Toast.makeText(getApplicationContext(), "EASTER EGGS: NOT DEFINED#2", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                     RadioButton radiobut = findViewById(R.id.Radiobutton);
+                     if(radiobut.isChecked()) {
                         Intent i = new Intent(MainActivity.this, Vigenere.class);
-                        startActivity(i);//Result =1
-                    }
-                });
-            }
-            else {
-                Button button1 = findViewById(R.id.button);
-
-                button1.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        Intent i = new Intent(MainActivity.this, CezarjevaOdsifrirana.class);
-                        startActivity(i);//Result =1
-                    }
-                });
-
-                Button button2 = findViewById(R.id.button2);
-
-                button2.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        Intent i = new Intent(MainActivity.this, VigenereOdsifrirana.class);
-                        startActivity(i);//Result =1
-                    }
-                });
-            }
-        }
+                        startActivity(i);
+                     }
+                     else {
+                        Intent i = new Intent(MainActivity.this, VigenereOdsifrirana.class;
+                        startActivity(i);
+                     } 
+        });
     }
     }
 
