@@ -7,52 +7,84 @@
     android:padding="20dp"
     android:gravity="center|top">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/linear"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Pozdravljeni! kaj bomo počeli danes? :)" />
+        android:layout_centerVertical="true"
+        android:paddingTop="100dp">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_alignParentRight="@id/button2"
-        android:layout_marginTop="150dp"
-        android:text="Cezarjeva šifra" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/button"
-        android:text="Vigenerova šifra" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Button1" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Button2" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/radGroup"
         android:orientation="horizontal"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="230dp"
-        android:layout_centerHorizontal="true">
-
-        <RadioButton
-            android:id="@+id/Radiobutton2"
+        android:layout_centerInParent="true">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Odšifriraj" />
+            android:id="@+id/radGroup"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
 
-        <RadioButton
-            android:id="@+id/Radiobutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zašifriraj" />
+            <RadioButton
+                android:id="@+id/Radiobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zašifriraj" />
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/Radiobutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Odšifriraj" />
 
+        </RadioGroup>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            ></View>
+    </LinearLayout>
 </RelativeLayout>
