@@ -21,7 +21,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
 
         <Button
@@ -35,7 +35,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
 
         <Button
@@ -43,13 +43,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Vigenerejeva šifra" /><!-- drugi gumb, ki mora imeti poseben id -->
+            android:text="Vigenerova šifra" /><!-- drugi gumb, ki mora imeti poseben id -->
 
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
     </LinearLayout>
 

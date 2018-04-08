@@ -32,14 +32,14 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
         final String msg = (((EditText) findViewById(R.id.besedilo_vig)).getText()).toString();//določi konstante "msg" in "kok"
         final String kok = (((EditText) findViewById(R.id.kljuc_vig)).getText()).toString();
         if ((msg.length() != 0) && (kok.length() != 0)) {//preveri, če slučajno nista konstante prazni
-           try {
+           //try {
                Intent results = new Intent(Vigenere.this, Results.class);
                results.putExtra("str_zasif", vigenere(msg, kok));//pošlje besedilo, ki ga vrne "vigenere" v naslednji activity
                startActivity(results);
-           }
-           catch (Exception e) {//ta del se pokliče, če pride do kakršnih koli težav pri izvajanju kode
-               Toast.makeText(getApplicationContext(), "nekaj je narobe :( (drugi del sporočila je: EP S)",Toast.LENGTH_SHORT).show();
-           }
+           //}
+           //catch (Exception e) {//ta del se pokliče, če pride do kakršnih koli težav pri izvajanju kode
+           //    Toast.makeText(getApplicationContext(), "nekaj je narobe :( (drugi del sporočila je: EP S)",Toast.LENGTH_SHORT).show();
+           //}
         }
         else {//če je kakšno polje prazno, potem se izvede ta del kode
             AlertDialog alertDialog = new AlertDialog.Builder(Vigenere.this).create();
@@ -70,12 +70,12 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
                 int trenuten = i * kljuc.length() + j;
                 if (trenuten < besedilo.length()) {
                     char c = besedilo.charAt(trenuten);
-                    String forever = "abcčdefghijklmnoprsštuvzž1234567890";
-                    int ta_kljuc = forever.indexOf(c);
+                    char charindex=kljuc.charAt(j);
+                    String forever = "abcčdefghijklmnoprsštuvzž0123456789";
+                    int ta_kljuc = forever.indexOf(charindex);
                     abeceda = rotate(forever, ta_kljuc);
-                    int charPosition = abeceda.indexOf(besedilo.charAt(trenuten));
-                    int keyVal = (charPosition) % 36;
-                    char replaceValue = abeceda.charAt(keyVal);
+                    int mesto=forever.indexOf(c);
+                    char replaceValue= abeceda.charAt(mesto);
                     rez += replaceValue;
 
                 } else {
