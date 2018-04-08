@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="si.peterb.seminarska">
+    package="si.peterb.seminarska">    <!-- ta datoteka je manifest, ki določa strukturo aplikacije -->
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name">    <!-- tu je zapisano ime projekta in ikono, ki jo uporabnik vidi -->
+    android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"><!-- napiše da se, ko se začne aplikacija, zažene MainActivity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cezarjeva" />
+        <activity android:name=".Cezarjeva" /><!-- tu so zapisani vsi activity-ji, ki jih ta aplikacija uporablja -->
         <activity android:name=".Vigenere" />
         <activity android:name=".Results" />
         <activity android:name=".CezarjevaOdsifrirana" />
-        <activity android:name=".VigenereOdsifrirana"></activity>
+        <activity android:name=".VigenereOdsifrirana"/>
     </application>
 
 </manifest>

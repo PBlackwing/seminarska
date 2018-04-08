@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- določi verzijo xml datoteke in kodiranje -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="si.peterb.seminarska.MainActivity"
     android:padding="20dp"
-    android:gravity="center|top">
+    android:gravity="center|top"> <!-- tu se določi, da bo ta postavitev uporabljala releativno postavitev in določi še nekaj drugih parametrov npr. koliko
+     bo širok in visok na zaslonu -->
+    <!-- -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,77 +16,82 @@
         android:id="@+id/linear"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:paddingTop="100dp">
+        android:paddingTop="100dp"><!-- v sam releativen layout pa sem vstavil še dve linearni postavitvi v katerih se nahajata gumba -->
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            ></View>
+            ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
 
         <Button
             android:id="@+id/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Button1" />
+            android:text="Button1" /><!-- tu se določi pravi gumb. id element je pomembn, saj ga lahko z njim najdemo v java datoteki -->
 
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            ></View>
+            ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
 
         <Button
             android:id="@+id/button2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Button2" />
+            android:text="Button2" /><!-- drugi gumb, ki mora imeti poseben id -->
 
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            ></View>
+            ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"><!-- glej zgornji linear layout -->
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            ></View>
+            ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
+
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radGroup"
             android:orientation="horizontal"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"><!-- ta del kode pove, da so vsi elemetni znotraj te značke del skupine izbirnih gumbov, kar pomeni, da je lahko označen le eden izmed njih-->
 
             <RadioButton
                 android:id="@+id/Radiobutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Zašifriraj" />
+                android:text="Zašifriraj" /><!-- prvi izbirni gumb s svojo id oznako -->
 
             <RadioButton
                 android:id="@+id/Radiobutton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Odšifriraj" />
+                android:text="Odšifriraj" /><!-- drugi izbirni gumb s svojo id oznako -->
 
         </RadioGroup>
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            ></View>
+            ></View><!-- to je prazen element, ki je vključen zaradi lepšega izgleda na zaslonu -->
+
     </LinearLayout>
+
 </RelativeLayout>

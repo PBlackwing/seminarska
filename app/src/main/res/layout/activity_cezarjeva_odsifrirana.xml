@@ -1,56 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- določi verzijo xml datoteke in kodiranje -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="si.peterb.seminarska.CezarjevaOdsifrirana">
+    tools:context="si.peterb.seminarska.CezarjevaOdsifrirana"><!-- pove, da uporablja linearni layout in določi njegovo velikost na zaslonu-->
 
-    <LinearLayout
+    <EditText
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/besedilo"
+        android:hint="Napiši šifrirano besedilo"/><!-- pokaže polje, kamor se vpiše šifrirano besedilo -->
+
+    <EditText
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/cezkljuc"
+        android:hint="Napiši ključ šifriranja"
+        /><!-- sem uporabnik vpiše, po kakšnem ključu je besedilo zašifrirano -->
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="enter"
+        android:id="@+id/button10"
+        /><!-- gumb, s katerim se premakneš na naslednji activity -->
 
-        <EditText
-            android:layout_width="600dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/besedilo"
-            android:hint="Napiši šifrirano besedilo"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/cezkljuc"
-            android:hint="Napiši ključ šifriranja"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="enter"
-            android:id="@+id/button10"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/opozorilo"
-            android:text=""/>
-
-    </LinearLayout>
 
 </LinearLayout>

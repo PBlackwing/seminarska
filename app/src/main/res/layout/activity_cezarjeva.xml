@@ -6,47 +6,25 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="left"
-    tools:context="si.peterb.seminarska.Cezarjeva">
+    tools:context="si.peterb.seminarska.Cezarjeva"><!-- pove, da postavitev uporablja linearno postavitev in da si bodo elementi sledii navpično -->
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="600dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/besedilo"
-            android:hint="Napiši besedilo"/>
-
-    </LinearLayout>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+        android:id="@+id/besedilo"
+        android:hint="Napiši besedilo"/>
+    <!-- editText je polje, kjer lahko uporabnik vnaša tekst -->
 
     <EditText
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:id="@+id/cezkljuc"
-        android:hint="Napiši število za ključ šifriranja"
-        />
-</LinearLayout>
+        android:hint="Napiši število za ključ šifriranja" /><!-- v to editText značko bo uporabnik vpisal ključ za cezarjevo šifro -->
 
-    <LinearLayout
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:text="enter"
+        android:id="@+id/button5" /><!-- gumb, ki ga uporabnik pritisne, ko konča -->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="enter"
-            android:id="@+id/button5"
-            />
-
-
-    </LinearLayout>
 </LinearLayout>

@@ -1,53 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- določi verzijo xml datoteke in kodiranje -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="si.peterb.seminarska.VigenereOdsifrirana"
-    android:orientation="vertical">
+    android:orientation="vertical"><!-- pove, da uporablja linearni layout in določi njegovo velikost na zaslonu-->
 
-    <LinearLayout
+    <EditText
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/besedilo_vig_od"
+        android:hint="Napiši šifrirano besedilo"/><!-- pokaže polje, kamor se vpiše šifrirano besedilo -->
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <EditText
-            android:layout_width="600dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/besedilo_vig_od"
-            android:hint="Napiši šifrirano besedilo"/>
+        android:id="@+id/kljuc_vig_od"
+        android:hint="Napiši besedo ki je ključ šifriranja (brez presledkov, številk in drugih znakov)"
+        /><!-- sem uporabnik vpiše, po kakšnem ključu je besedilo zašifrirano -->
 
-        <TextView android:layout_height="10dp"
-            android:layout_width="wrap_content"
-            />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/kljuc_vig_od"
-            android:hint="Napiši besedo ki je ključ šifriranja (brez presledkov, številk in drugih znakov)"
-            />
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="enter"
-            android:id="@+id/button11"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/opozorilo"
-            android:text=""/>
-
-    </LinearLayout>
+        android:text="enter"
+        android:id="@+id/button11"
+        /><!-- gumb, s katerim se premakneš na naslednji activity -->
 
 </LinearLayout>
