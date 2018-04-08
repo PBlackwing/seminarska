@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Button1" /><!-- tu se določi pravi gumb. id element je pomembn, saj ga lahko z njim najdemo v java datoteki -->
+            android:text="Cezarjeva šifra" /><!-- tu se določi pravi gumb. id element je pomembn, saj ga lahko z njim najdemo v java datoteki -->
 
 
         <View
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Button2" /><!-- drugi gumb, ki mora imeti poseben id -->
+            android:text="Vigenerejeva šifra" /><!-- drugi gumb, ki mora imeti poseben id -->
 
 
         <View
