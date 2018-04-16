@@ -64,7 +64,7 @@ public class CezarjevaOdsifrirana extends Activity {//poimenuje java class Cezar
 
     public String odsifriraj (String besedilce, int kljucek)
     {
-        final String abeceda = "abcčdefghijklmnoprsštuvzž1234567890";//abeceda za odšifriranje
+        final String abeceda = "abcčdefghijklmnoprsštuvzž1234567890 wqyx";//abeceda za odšifriranje
         besedilce = besedilce.toLowerCase();
         String rez = "";
         for (int i = 0; i < besedilce.length(); i++)

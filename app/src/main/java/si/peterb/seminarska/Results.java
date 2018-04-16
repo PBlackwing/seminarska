@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Results extends Activity {////poimenuje java class Results in pove, da je to Activity
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {//kaj se zgodi ob zagonu tega activity-ja
         super.onCreate(savedInstanceState);

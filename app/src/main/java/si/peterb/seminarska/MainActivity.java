@@ -20,7 +20,8 @@ public class MainActivity extends Activity {//poimenuje java class MainActivity 
             public void onClick(View view) {
                 RadioGroup radioGroup = findViewById(R.id.radGroup);
                 if(radioGroup.getCheckedRadioButtonId()==-1){//pove, kaj se zgodi, če ni ozačen nobeden od izbirnih gumbov
-                    Toast.makeText(getApplicationContext(), "EASTER EGGS: NOT DEFINED", Toast.LENGTH_SHORT).show();//skozi celotno aplikacijo sem dodal manjša presenečenja za uporabnike
+                    Toast.makeText(getApplicationContext(), "EASTER EGGS: NOT DEFINED", Toast.LENGTH_SHORT).show();//skozi celotno aplikacijo
+                    // sem dodal manjša presenečenja za uporabnike
                 }
                 else {//če pa je en izbirni gumb označen, potem pogleda kateri in zažene potreben activity
                     RadioButton radiobut = findViewById(R.id.Radiobutton);

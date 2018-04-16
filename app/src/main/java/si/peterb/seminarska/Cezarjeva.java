@@ -31,8 +31,10 @@ public class Cezarjeva extends Activity {//poimenuje java class Cezarjeva in pov
     }
 
     public void cela () {//ta funkcija je bila upeljana zaradi lažje beljivosti kode
-        final String msg = (((EditText) findViewById(R.id.besedilo)).getText()).toString();//pove, da je "msg" besedilo in da se ne bo več spreminjalo. Pove tudi, iz kje dobi to besedilo
-        String kok = (((EditText) findViewById(R.id.cezkljuc)).getText()).toString();//"kok" je spremenljivka in je besedilo. Določi tudi, iz kje dobi vrednost za "kok"
+        final String msg = (((EditText) findViewById(R.id.besedilo)).getText()).toString();//pove, da je "msg" besedilo in da se ne bo več spreminjalo.
+        // Pove tudi, iz kje dobi to besedilo
+        String kok = (((EditText) findViewById(R.id.cezkljuc)).getText()).toString();//"kok" je spremenljivka in je besedilo. Določi tudi,
+        // iz kje dobi vrednost za "kok"
         if ((msg.length() != 0) && (kok.length() != 0)) {//preveri, če je kateri od obeh vrednosti "kok" ali "msg" prazen
             try {//ta try-catch določitev je pomembna, saj bi uporabnik v prostor za ključ vpisal besedo, čeprav je vprašan za številko
                 if (kok.length() > msg.length()) {//ta if izraz je potreben, če je ključ daljši od sporočila in temu primerno ključ skrajša
@@ -40,11 +42,13 @@ public class Cezarjeva extends Activity {//poimenuje java class Cezarjeva in pov
                 }
                 final int koliko = Integer.parseInt(kok);//določi konstanto "koliko", ki funkcionira kot ključ za cezarjevo šifro
                 Intent results = new Intent(Cezarjeva.this, Results.class);//pove, da bi rad začel nov activity
-                results.putExtra("str_zasif", zasifriraj(msg, koliko));//ta del kode predaja vrednosti med activity-ji. Naprej bo podal vrednost, ki jo dobi iz funkcije zašifriraj
+                results.putExtra("str_zasif", zasifriraj(msg, koliko));//ta del kode predaja vrednosti med activity-ji. Naprej bo podal vrednost,
+                // ki jo dobi iz funkcije zašifriraj
                 startActivity(results);//začne nov activity
             }
             catch (Exception e) {//če ni vpisana številka v polje s ključem, ali kakšna druga nepredvidena napaka, potem izvede to kodo
-                Toast.makeText(getApplicationContext(), "nekaj je narobe :( (prvi del sporočila je: JE)",Toast.LENGTH_SHORT).show();//uporabniku pove, da je prišlo do napake
+                Toast.makeText(getApplicationContext(), "nekaj je narobe :( (prvi del sporočila je: JE)",Toast.LENGTH_SHORT).show();//uporabniku pove,
+                // da je prišlo do napake
             }
         }
         else {//pove uporabniku, da so polja prazna in da jih mora za nadaljevanje izpolniti
@@ -68,7 +72,7 @@ public class Cezarjeva extends Activity {//poimenuje java class Cezarjeva in pov
 
     public String zasifriraj (String besedilce, int kljucek)//poimenuje funkcijo "zašifriraj". Pove, da bo vrnila besedilo in da vzame dva argumenta
     {
-        final String abeceda = "abcčdefghijklmnoprsštuvzž1234567890";//abeceda, ki se uporablja za šifriranje
+        final String abeceda = "abcčdefghijklmnoprsštuvzž1234567890 wqyx";//abeceda, ki se uporablja za šifriranje
         besedilce = besedilce.toLowerCase();//"msg" spremeni v  male črke
         String rez = "";//to je besedilo, kamor se bo dodajal rezultat
         for (int i = 0; i < besedilce.length(); i++) {//zanka, ki se požene za vsako črko v besedilu.

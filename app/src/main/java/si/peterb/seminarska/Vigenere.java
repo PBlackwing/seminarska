@@ -32,14 +32,14 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
         final String msg = (((EditText) findViewById(R.id.besedilo_vig)).getText()).toString();//določi konstante "msg" in "kok"
         final String kok = (((EditText) findViewById(R.id.kljuc_vig)).getText()).toString();
         if ((msg.length() != 0) && (kok.length() != 0)) {//preveri, če slučajno nista konstante prazni
-           //try {
+           try {
                Intent results = new Intent(Vigenere.this, Results.class);
                results.putExtra("str_zasif", vigenere(msg, kok));//pošlje besedilo, ki ga vrne "vigenere" v naslednji activity
                startActivity(results);
-           //}
-           //catch (Exception e) {//ta del se pokliče, če pride do kakršnih koli težav pri izvajanju kode
-           //    Toast.makeText(getApplicationContext(), "nekaj je narobe :( (drugi del sporočila je: EP S)",Toast.LENGTH_SHORT).show();
-           //}
+           }
+           catch (Exception e) {//ta del se pokliče, če pride do kakršnih koli težav pri izvajanju kode
+               Toast.makeText(getApplicationContext(), "nekaj je narobe :( (drugi del sporočila je: EP S)",Toast.LENGTH_SHORT).show();
+           }
         }
         else {//če je kakšno polje prazno, potem se izvede ta del kode
             AlertDialog alertDialog = new AlertDialog.Builder(Vigenere.this).create();
@@ -63,7 +63,6 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
         if(kljuc.length()>besedilo.length()){//poskrbi, da je ključ dolg največ toliko kot besedilo
             kljuc = kljuc.substring(0, besedilo.length());
         }
-
         String abeceda = null;
         for (int i = 0; i < (besedilo.length() / kljuc.length()); i++) {//sledi postopku šifriranja po vigenereju
             for (int j = 0; j < kljuc.length(); j++) {
@@ -71,7 +70,7 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
                 if (trenuten < besedilo.length()) {
                     char c = besedilo.charAt(trenuten);
                     char charindex=kljuc.charAt(j);
-                    String forever = "abcčdefghijklmnoprsštuvzž0123456789";
+                    String forever = "abcčdefghijklmnoprsštuvzž0123456789 wqyx";
                     int ta_kljuc = forever.indexOf(charindex);
                     abeceda = rotate(forever, ta_kljuc);
                     int mesto=forever.indexOf(c);
@@ -80,18 +79,12 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
 
                 } else {
                     break;
-                }
-            }
-        }
-
-        return rez;
-    }
-
+                } } }
+        return rez;}
     public static String rotate(String s, int offset) {//ker je potrebno generirati abecede v različnih vrstnih redih, ta funkcija stvari poenostavi
         int i = offset % s.length();
         return s.substring(i) + s.substring(0, i);
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {//del kode odgovoren za funkcionalnost gumba nazaj na zgornjem levem lotu zaslona
         switch (item.getItemId()) {
@@ -101,5 +94,4 @@ public class Vigenere extends Activity {//poimenuje java class Vigenere in pove,
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

@@ -61,14 +61,13 @@ public class VigenereOdsifrirana extends Activity {//poimenuje java class Vigene
         if(kljuc.length()>besedilo.length()){//ta if izraz je potreben, če je ključ daljši od sporočila in temu primerno ključ skrajša
             kljuc = kljuc.substring(0, besedilo.length());
         }
-
         String abeceda = null;
         for (int i = 0; i < (besedilo.length() / kljuc.length()); i++) {
             for (int j = 0; j < kljuc.length(); j++) {
                 int trenuten = i * kljuc.length() + j;
                 if (trenuten < besedilo.length()) {
                     char c = besedilo.charAt(trenuten);
-                    String forever = "abcčdefghijklmnoprsštuvzž1234567890";
+                    String forever = "abcčdefghijklmnoprsštuvzž1234567890 wqyx";
                     char d = kljuc.charAt(j);
                     int ta_kljuc = forever.indexOf(d);
                     abeceda = rotate(forever, ta_kljuc);
@@ -77,13 +76,9 @@ public class VigenereOdsifrirana extends Activity {//poimenuje java class Vigene
                     char replaceValue = forever.charAt(charPosition);
                     rez += replaceValue;
                 } else {
-                    break;
-                }
-            }
-        }
+                    break; } } }
         return rez;
     }
-
     public static String rotate(String s, int offset) {//funkcija, ki genrerira rotirano besedilo abecede
         int i = offset % s.length();
         return s.substring(i) + s.substring(0, i);
@@ -93,8 +88,6 @@ public class VigenereOdsifrirana extends Activity {//poimenuje java class Vigene
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                return true;
-        }
+                return true; }
         return super.onOptionsItemSelected(item);
-    }
-}
+    } }

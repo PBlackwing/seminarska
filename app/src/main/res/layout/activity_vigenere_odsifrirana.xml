@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/kljuc_vig_od"
-        android:hint="Napiši besedo ki je ključ šifriranja (brez presledkov, številk in drugih znakov)"
+        android:hint="Napiši besedo, ki je ključ šifriranja (brez presledkov, številk in drugih znakov)"
         /><!-- sem uporabnik vpiše, po kakšnem ključu je besedilo zašifrirano -->
 
     <Button
